@@ -44,7 +44,8 @@ check [`TODO.md`](https://github.com/alexzanderr/pepe/blob/main/TODO.md)
 
 # Showcase
 
-[create-python-package](https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-showcase.mp4)
+https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-showcase.mp4
+
 
 Now you can create `python packages` just like `npx create-react-app`, by running the command:
 ```shell
