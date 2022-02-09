@@ -152,7 +152,7 @@ python-versions = "*"
 
 [[package]]
 name = "core-dev"
-version = "0.1.8"
+version = "0.1.9"
 description = ""
 category = "main"
 optional = false
@@ -3365,7 +3365,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "f15e326ebcc1ed71ef6f1ae7a444907a687b51414be582fef0725e2bc1addb5a"
+content-hash = "69f586b39d99f2c0cb49ada5bfb7725d040c5bb451ec650a063cfb8c0e9ebf2a"
 
 [metadata.files]
 appdirs = [
@@ -3475,8 +3475,8 @@ comtypes = [
     {file = "comtypes-1.1.10.tar.gz", hash = "sha256:a9929e4bea8f874adc7c370e58a553aa91a4c08cecd58a0fdcf7ff5238af14e5"},
 ]
 core-dev = [
-    {file = "core_dev-0.1.8-py3-none-any.whl", hash = "sha256:09c072d6800d5b288a02ceb7c999827ec6ff7d71fb9e387cb7847bdefeb55ab3"},
-    {file = "core_dev-0.1.8.tar.gz", hash = "sha256:ec5f7e22a0ced1d448668d953de88a274bdbefa18f297a1afa84b332a2f9d74f"},
+    {file = "core_dev-0.1.9-py3-none-any.whl", hash = "sha256:6c422a4a7b9d955ddbf6241292a8248f7c0b0680d53c6e334ad3b3370ff80833"},
+    {file = "core_dev-0.1.9.tar.gz", hash = "sha256:e44bffe9b51b391ed4096ae9c3083b48ff3ed7256334a0c7c1f9fdcc497b3618"},
 ]
 coverage = [
     {file = "coverage-6.3.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:eeffd96882d8c06d31b65dddcf51db7c612547babc1c4c5db6a011abe9798525"},

@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
     a pipenv wrapper with a cooler name
 """
@@ -76,3 +75,6 @@ cli.add_command({_stem}, name="{_stem}")
 
 
 collect_pepe_user_defined_commands()
+
+if __name__ == '__main__':
+    cli()
