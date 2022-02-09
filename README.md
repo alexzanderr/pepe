@@ -43,9 +43,8 @@ why not. period.
 check [`TODO.md`](https://github.com/alexzanderr/pepe/blob/main/TODO.md)
 
 # Showcase
-<video width="500" height="500" controls>
-  <source src="https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-showcase.mp4" type="video/mp4">
-</video>
+
+![Poetry Install](https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-showcase.mp4)
 
 
 
