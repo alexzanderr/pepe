@@ -1,0 +1,14 @@
+{
+    // docs found in this
+    // https://packagecontrol.io/packages/LSP-pyright
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__"
+    ],
+    "ignore": [
+        "**/node_modules",
+        "**/__pycache__"
+    ],
+    "venvPath": "/home/alexzander/.cache/pypoetry/virtualenvs",
+    "venv": "pepe-UNum-4dU-py3.10"
+}
