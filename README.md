@@ -42,6 +42,15 @@ why not. period.
 # TODO
 check [`TODO.md`](https://github.com/alexzanderr/pepe/blob/main/TODO.md)
 
+# Showcase
+Now you can create `python packages` just like `npx create-react-app`, by running the command:
+```shell
+pepe create-python-package react-app -d "random description"
+```
+- `-d` is for description
+
+you can also specify python version:
+- `--python 3.6`
 
 
 # CONTRIBUTING
