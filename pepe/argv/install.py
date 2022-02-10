@@ -9,10 +9,10 @@ import subprocess
 
 def _install(dev, **kw):
 
+    _install_command = "install"
     if PACKAGE_MANAGER == "poetry":
         _install_command = "add"
-    elif PACKAGE_MANAGER == "pipenv":
-        _install_command = "install"
+    # elif PACKAGE_MANAGER == "pipenv":
 
 
     _dev = ""

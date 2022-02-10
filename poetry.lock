@@ -152,7 +152,7 @@ python-versions = "*"
 
 [[package]]
 name = "core-dev"
-version = "0.1.9"
+version = "0.2.1"
 description = ""
 category = "main"
 optional = false
@@ -332,7 +332,7 @@ python-versions = ">=3.6,<4.0"
 
 [[package]]
 name = "decopatch"
-version = "1.4.8"
+version = "1.4.9"
 description = "Create decorators easily in python."
 category = "main"
 optional = false
@@ -754,7 +754,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "platformdirs"
-version = "2.4.1"
+version = "2.5.0"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 category = "main"
 optional = false
@@ -2917,7 +2917,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 
 [[package]]
 name = "pytest-cases"
-version = "3.6.8"
+version = "3.6.9"
 description = "Separate test code from test cases in pytest."
 category = "main"
 optional = false
@@ -3085,7 +3085,7 @@ use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
 name = "rich"
-version = "11.1.0"
+version = "11.2.0"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 category = "main"
 optional = false
@@ -3365,7 +3365,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "69f586b39d99f2c0cb49ada5bfb7725d040c5bb451ec650a063cfb8c0e9ebf2a"
+content-hash = "591b6a9ee79654a5e4405813e8c3b85b486842170f8cb00d685566f19f265bf0"
 
 [metadata.files]
 appdirs = [
@@ -3475,8 +3475,8 @@ comtypes = [
     {file = "comtypes-1.1.10.tar.gz", hash = "sha256:a9929e4bea8f874adc7c370e58a553aa91a4c08cecd58a0fdcf7ff5238af14e5"},
 ]
 core-dev = [
-    {file = "core_dev-0.1.9-py3-none-any.whl", hash = "sha256:6c422a4a7b9d955ddbf6241292a8248f7c0b0680d53c6e334ad3b3370ff80833"},
-    {file = "core_dev-0.1.9.tar.gz", hash = "sha256:e44bffe9b51b391ed4096ae9c3083b48ff3ed7256334a0c7c1f9fdcc497b3618"},
+    {file = "core_dev-0.2.1-py3-none-any.whl", hash = "sha256:6086a83c901fd0a761a59ae01300508f3467dbaf06b6778f91c30135fb584bf7"},
+    {file = "core_dev-0.2.1.tar.gz", hash = "sha256:cc7b6c87247281a358debf3f42ed1182aa6bc620c47891edd05bea77b5c5ca47"},
 ]
 coverage = [
     {file = "coverage-6.3.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:eeffd96882d8c06d31b65dddcf51db7c612547babc1c4c5db6a011abe9798525"},
@@ -3556,8 +3556,8 @@ datedelta = [
     {file = "datedelta-1.4.tar.gz", hash = "sha256:3f1ef319ead642a76a3cab731917bf14a0ced0d91943f33ff57ae615837cab97"},
 ]
 decopatch = [
-    {file = "decopatch-1.4.8-py2.py3-none-any.whl", hash = "sha256:29a74d5d753423b188d5b537532da4f4b88e33ddccb95a8a20a5eff5b13265d4"},
-    {file = "decopatch-1.4.8.tar.gz", hash = "sha256:c66b0815f15db04de7bb52b0b276432b76b7346fe7046f28033f48a14340d144"},
+    {file = "decopatch-1.4.9-py2.py3-none-any.whl", hash = "sha256:cd9a49f749c26ea8e5fc567b0ccc04f61fb83ebd6eea0834e426f327399a7757"},
+    {file = "decopatch-1.4.9.tar.gz", hash = "sha256:b5882c8cf0d5b01d218b4e04f6762d07b3287420ea509706f59971c3d6fec56f"},
 ]
 decorator = [
     {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
@@ -3933,8 +3933,8 @@ pillow = [
     {file = "Pillow-9.0.1.tar.gz", hash = "sha256:6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa"},
 ]
 platformdirs = [
-    {file = "platformdirs-2.4.1-py3-none-any.whl", hash = "sha256:1d7385c7db91728b83efd0ca99a5afb296cab9d0ed8313a45ed8ba17967ecfca"},
-    {file = "platformdirs-2.4.1.tar.gz", hash = "sha256:440633ddfebcc36264232365d7840a970e75e1018d15b4327d11f91909045fda"},
+    {file = "platformdirs-2.5.0-py3-none-any.whl", hash = "sha256:30671902352e97b1eafd74ade8e4a694782bd3471685e78c32d0fdfd3aa7e7bb"},
+    {file = "platformdirs-2.5.0.tar.gz", hash = "sha256:8ec11dfba28ecc0715eb5fb0147a87b1bf325f349f3da9aab2cd6b50b96b692b"},
 ]
 playsound = [
     {file = "playsound-1.3.0.tar.gz", hash = "sha256:cc6ed11d773034b0ef624e6bb4bf50f4b76b8414a59ce6d38afb89b423297ced"},
@@ -4807,8 +4807,8 @@ pytest = [
     {file = "pytest-7.0.0.tar.gz", hash = "sha256:dad48ffda394e5ad9aa3b7d7ddf339ed502e5e365b1350e0af65f4a602344b11"},
 ]
 pytest-cases = [
-    {file = "pytest-cases-3.6.8.tar.gz", hash = "sha256:d423e87b30e1080cc162d86c72bfa35861cccfe3539125e81c68ba142ab974bc"},
-    {file = "pytest_cases-3.6.8-py2.py3-none-any.whl", hash = "sha256:247b8d572a1003b0c90c114394df2980ed757574c8529f38e3a66b68f0caeadf"},
+    {file = "pytest-cases-3.6.9.tar.gz", hash = "sha256:05ff5f6af8651dc1a3f277f52714e4323a68f213327c11e03028a539c20bd929"},
+    {file = "pytest_cases-3.6.9-py2.py3-none-any.whl", hash = "sha256:38fda5ed75ff3218b1ccb59a2a11381682b62f556299c26c7af1837f04618f41"},
 ]
 pytest-forked = [
     {file = "pytest-forked-1.4.0.tar.gz", hash = "sha256:8b67587c8f98cbbadfdd804539ed5455b6ed03802203485dd2f53c1422d7440e"},
@@ -4905,8 +4905,8 @@ requests = [
     {file = "requests-2.27.1.tar.gz", hash = "sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"},
 ]
 rich = [
-    {file = "rich-11.1.0-py3-none-any.whl", hash = "sha256:365ebcdbfb3aa8d4b0ed2490e0fbf7b886a39d14eb7ea5fb7aece950835e1eed"},
-    {file = "rich-11.1.0.tar.gz", hash = "sha256:43e03d8eec12e21beaecc22c828a41c4247356414a12d5879834863d4ad53816"},
+    {file = "rich-11.2.0-py3-none-any.whl", hash = "sha256:d5f49ad91fb343efcae45a2b2df04a9755e863e50413623ab8c9e74f05aee52b"},
+    {file = "rich-11.2.0.tar.gz", hash = "sha256:1a6266a5738115017bb64a66c59c717e7aa047b3ae49a011ede4abdeffc6536e"},
 ]
 rubicon-objc = [
     {file = "rubicon-objc-0.4.2.tar.gz", hash = "sha256:6fbc8e12bd66c84427cfb95634c4bd10ade356ae2b2ae0d2b51dcbf5810d2602"},

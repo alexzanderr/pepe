@@ -1,51 +1,104 @@
 
-from . import cli
-import click
+"""
+    pepe create-... stuff like npx create-..
+"""
 
 
-
-
-from core_dev.shell import run_shell
-from core_dev.shell import get_output
-from time import sleep
-
+# python
+import sys
 import os
+import subprocess
+from time import sleep
+from typing import Tuple
 from pathlib import Path
 from string import Template
-
-from pepe.core.git import Git
-from pepe.core.spinner import SpinnerDots
+# 3rd party packages
 
 
+import click
+from core_dev.shell import run_shell
+from core_dev.shell import get_output
+from core_dev.icons import Icons
+from core_dev.aesthetics import *
 from rich.console import Console
 
+
+# pepe project
+# pepe/argv/__init__.py
+from . import cli
+from . import PROGRAM_NAME
+
+# pepe/core/__init__.py
+from pepe.core import Git
+from pepe.core import SpinnerDots
+
+
+
+
+
 _con = Console()
+color = RGBColors()
 
 
-from core_dev.aesthetics import *
+
 
 # import core_dev.shell
 # print(core_dev.shell.__file__)
 # print(core.shell.__path__)
 
 
-python_icon = "🐍"
 
 remote_template_repo = "https://github.com/alexzanderr/python-package-project-template"
+
+
+def cyan_italic(_string: str) -> str:
+    return color.cyan(italic(_string))
+
+
+def __exit(_code: int = 0):
+    _colored_code = green(_code)
+    _message = green("success")
+    if _code != 0:
+        _colored_code = red(_code)
+        _message = red("error")
+
+    print(f"\n{cyan_italic(PROGRAM_NAME)} exited with code {_colored_code}. ({italic(_message)})")
+    # print(sys.argv)
+    sys.exit(_code)
+
 
 # just like 'npx create-react-app app'
 @cli.command(name="create-python-package")
 @click.argument("folder")
-@click.option("--python", "-py")
-@click.option("--description", "-d")
+@click.option("--python", "-py", default="3.10")
+@click.option("--description", "-d", default="no description available for the package")
 @click.option("--interactive", "-it", default=False)
-def wrapper(folder, python, description, interactive):
+@click.option("--force-delete", "-fd", is_flag=True, default=False)
+def wrapper(folder, python, description, interactive, force_delete):
+    _exit_code = 0
+
+    print()
+
+    _folder_colored = cyan_italic(folder)
+    _exa_tree_command = "./bin/exa --tree --icons --all --ignore-glob='.git|.hg|.hglf|.venv|venv|*-venv|*_venv|__pycache__|.pytest_cache|*font-awesome*'"
+    _folder = Path(folder)
+
+
+    if _folder.exists():
+        print(f"{yellow('WARNING')}: folder '{_folder_colored}' already {red('exists')}.")
+        print(f"Aborted {italic(yellow('<create-python-package>'))} command.")
+        print()
+        print(f"Here is a tree representation of the project '{_folder_colored}':")
+        run_shell(_exa_tree_command + f" {_folder}")
+        _exit_code = 1
+        __exit(_exit_code)
+
+
     # print(python)
     # print(description)
     # print(interactive)
-    color = RGBColors()
-    print(f"\nCreating {yellow('python package')} from template:")
-    blue_dark_arrow = color.blue_dark("  → ")
+    print(f"Creating {yellow('python package')} from template:")
+    blue_dark_arrow = color.blue_dark("  →  ")
     print(blue_dark_arrow + color.cyan(italic(underlined(("https://github.com/alexzanderr/python-package-project-template")))))
     print()
 
@@ -59,15 +112,14 @@ def wrapper(folder, python, description, interactive):
         run_shell("rm -rf python-package-project-template")
         run_shell(f"rm -rf {folder}")
     else:
-        print(f"\n{green('Successfully')} created {yellow('python package')} from template. {green(python_icon)}")
+        print(f"\n{green('Successfully')} created {yellow('python package')} from template. {green(Icons.python)}")
         print("\nProject contains:")
-        print(blue_dark_arrow + f" Git Repo " + yellow(""))
+        print(blue_dark_arrow + f"Git Repo " + yellow(""))
         # print(blue_dark_arrow + f" Virtual Environment: {get_output()} " + yellow(""))
-        print(blue_dark_arrow + " README.md " + yellow(""))
-        print(blue_dark_arrow + " and many more ... ")
+        print(blue_dark_arrow + "README.md " + yellow(""))
+        print(blue_dark_arrow + "and many more ... ")
 
-import subprocess
-from typing import Tuple
+    __exit(_exit_code)
 
 def create_python_package(folder, python_version, description):
     if folder == ".":
@@ -123,7 +175,7 @@ def create_python_package(folder, python_version, description):
                         PACKAGE_NAME=package_name,
                         DESCRIPTION=description,
                         HOME=os.environ["HOME"],
-                        PYTHON_VERSION=python_version if python_version else "3.10"
+                        PYTHON_VERSION=python_version
                     )
                     item.write_text(file_contents)
                     # print(file_contents)

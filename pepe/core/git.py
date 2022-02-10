@@ -1,5 +1,5 @@
 
-from core.shell import run_shell
+from core_dev.shell import run_shell
 from pathlib import Path
 from collections import namedtuple
 

@@ -1,5 +1,6 @@
 
 from pepe import cli
+from pepe import PROGRAM_NAME
 
 
 # these commands must be imported
