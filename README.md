@@ -60,3 +60,10 @@ you can also specify python version:
 
 # CONTRIBUTING
 fill this space
+
+# How to convert mp4 to gif (if you are curious)
+
+first of all, i used `obs` to record the showcase and saved it to `mp4`, then i used this command to convert to `gif`:
+```shell
+ffmpeg -i pepe-create-python-package.mp4 -vf "fps=10,scale=1500:-1:flags=lanczos" -c:v pam -f image2pipe - | convert - -loop 0 -layers optimize pepe-create-python-package.gif
+```
