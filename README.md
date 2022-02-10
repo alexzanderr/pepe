@@ -44,7 +44,7 @@ check [`TODO.md`](https://github.com/alexzanderr/pepe/blob/main/TODO.md)
 
 # Showcase
 
-![Poetry Install](https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-showcase.mp4)
+![pepe-create-python-package](https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-create-python-package.gif)
 
 
 
