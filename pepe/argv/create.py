@@ -9,9 +9,12 @@ import sys
 import os
 import subprocess
 from time import sleep
+from typing import Callable
 from typing import Tuple
 from pathlib import Path
 from string import Template
+from inspect import isfunction
+from inspect import ismethod
 # 3rd party packages
 
 
@@ -67,14 +70,14 @@ def __exit(_code: int = 0):
     sys.exit(_code)
 
 
-# just like 'npx create-react-app app'
-@cli.command(name="create-python-package")
-@click.argument("folder")
-@click.option("--python", "-py", default="3.10")
-@click.option("--description", "-d", default="no description available for the package")
-@click.option("--interactive", "-it", default=False)
-@click.option("--force-delete", "-fd", is_flag=True, default=False)
-def wrapper(folder, python, description, interactive, force_delete):
+
+def _create_python_package(
+    folder: str,
+    python_version: str,
+    description: str,
+    interactive: bool,
+    force_delete: bool
+):
     _exit_code = 0
 
     print()
@@ -103,25 +106,7 @@ def wrapper(folder, python, description, interactive, force_delete):
     print()
 
 
-    oldcwd = os.getcwd()
-    try:
-        create_python_package(folder, python, description)
-    except Exception as error:
-        _con.print_exception(word_wrap=True)
-        os.chdir(oldcwd)
-        run_shell("rm -rf python-package-project-template")
-        run_shell(f"rm -rf {folder}")
-    else:
-        print(f"\n{green('Successfully')} created {yellow('python package')} from template. {green(Icons.python)}")
-        print("\nProject contains:")
-        print(blue_dark_arrow + f"Git Repo " + yellow(""))
-        # print(blue_dark_arrow + f" Virtual Environment: {get_output()} " + yellow(""))
-        print(blue_dark_arrow + "README.md " + yellow(""))
-        print(blue_dark_arrow + "and many more ... ")
 
-    __exit(_exit_code)
-
-def create_python_package(folder, python_version, description):
     if folder == ".":
         # then create everything at current workding directory
         print("dot")
@@ -222,6 +207,45 @@ def create_python_package(folder, python_version, description):
         # os.chdir(cwd)
         # run_shell(f"rm -rf {folder}")
 
-        # spawn virtual env
-        # run_shell("poetry shell")
+        # spawn venv inside current shell
+        _venv = os.environ.get("VIRTUAL_ENV", None)
+        if _venv:
+            print(f"\n{red('Cannot')} spawn virtual environment here.")
+            print("You are already inside a virtual environment.")
+            print(blue_dark_arrow + cyan_italic(os.path.basename(_venv)))
+            print(f"To activate virtual environment (of new project) run:")
+            print(blue_dark_arrow + cyan_italic("pepe s") + " | " + cyan_italic("pepe shell"))
+        else:
+            run_shell("poetry shell")
 
+
+
+    print(f"\n{green('Successfully')} created {yellow('python package')} from template. {green(Icons.python)}")
+    print("\nProject contains:")
+    print(blue_dark_arrow + f"Git Repo " + yellow(""))
+    # print(blue_dark_arrow + f" Virtual Environment: {get_output()} " + yellow(""))
+    print(blue_dark_arrow + "README.md " + yellow(""))
+    print(blue_dark_arrow + "and many more ... ")
+
+    __exit(_exit_code)
+
+
+def create_python_package_command_wrapper(_name: str) -> Callable:
+    if "_" in _name:
+        _name = _name.replace("_", "-")
+
+    @cli.command(name=_name)
+    @click.argument("folder")
+    @click.option("--python", "-py", default="3.10")
+    @click.option("--description", "-d", default="no description available for the package")
+    @click.option("--interactive", "-it", default=False)
+    @click.option("--force-delete", "-fd", is_flag=True, default=False)
+    def inner_wrapper(folder: str, python: str, description: str, interactive: bool, force_delete: bool):
+        _create_python_package(folder, python, description, interactive, force_delete)
+    return inner_wrapper
+
+
+cpp = create_python_package_command_wrapper("cpp")
+create_python_package = create_python_package_command_wrapper("create-python-package")
+create_py_package = create_python_package_command_wrapper("create-py-package")
+create_py_pack = create_python_package_command_wrapper("create-py-pack")

@@ -4,7 +4,5 @@ PROGRAM_NAME = "pepe"
 # if you import the variable in argv
 # every variable must be here before argv
 
-from .argv import i, install
-from .argv import rm, uninstall
-from .argv import s, shell
+from .argv import *
 
