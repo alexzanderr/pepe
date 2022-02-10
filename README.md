@@ -46,6 +46,7 @@ check [`TODO.md`](https://github.com/alexzanderr/pepe/blob/main/TODO.md)
 
 ![pepe-create-python-package](https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-create-python-package.gif)
 
+<img src="https://raw.githubusercontent.com/alexzanderr/pepe/main/static/video/pepe-create-python-package.gif"/>
 
 
 Now you can create `python packages` just like `npx create-react-app`, by running the command:
